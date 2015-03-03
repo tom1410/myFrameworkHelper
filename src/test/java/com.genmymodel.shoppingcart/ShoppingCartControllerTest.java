@@ -39,8 +39,12 @@ public class ShoppingCartControllerTest {
      */
 	@Test
 	public void getHello() throws Exception {
-	
-	    // Start of user code ShoppingCart
+	   
+		mvc.perform(MockMvcRequestBuilders.get("/shoppingcart").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().string(is("Greetings from ShoppingCartController!")));
+		
+		// Start of user code ShoppingCart
 		mvc.perform(MockMvcRequestBuilders.get("/shoppingcart").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(is("Greetings from ShoppingCartController!")));

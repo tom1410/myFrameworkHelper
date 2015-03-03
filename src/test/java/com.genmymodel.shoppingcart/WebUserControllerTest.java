@@ -39,8 +39,12 @@ public class WebUserControllerTest {
      */
 	@Test
 	public void getHello() throws Exception {
-	
-	    // Start of user code WebUser
+	   
+		mvc.perform(MockMvcRequestBuilders.get("/webuser").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().string(is("Greetings from WebUserController!")));
+		
+		// Start of user code WebUser
 		mvc.perform(MockMvcRequestBuilders.get("/webuser").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(is("Greetings from WebUserController!")));
