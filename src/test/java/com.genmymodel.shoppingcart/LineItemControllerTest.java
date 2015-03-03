@@ -39,8 +39,12 @@ public class LineItemControllerTest {
      */
 	@Test
 	public void getHello() throws Exception {
+	
+	    // Start of user code LineItem
 		mvc.perform(MockMvcRequestBuilders.get("/lineitem").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(is("Greetings from LineItemController!")));
+		
+		// End of user code
 	}
 }

@@ -39,8 +39,12 @@ public class OrderControllerTest {
      */
 	@Test
 	public void getHello() throws Exception {
+	
+	    // Start of user code Order
 		mvc.perform(MockMvcRequestBuilders.get("/order").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(is("Greetings from OrderController!")));
+		
+		// End of user code
 	}
 }

@@ -39,8 +39,12 @@ public class ProductControllerTest {
      */
 	@Test
 	public void getHello() throws Exception {
+	
+	    // Start of user code Product
 		mvc.perform(MockMvcRequestBuilders.get("/product").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(is("Greetings from ProductController!")));
+		
+		// End of user code
 	}
 }

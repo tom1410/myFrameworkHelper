@@ -39,8 +39,12 @@ public class ActivityControllerTest {
      */
 	@Test
 	public void getHello() throws Exception {
+	
+	    // Start of user code Activity
 		mvc.perform(MockMvcRequestBuilders.get("/activity").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(is("Greetings from ActivityController!")));
+		
+		// End of user code
 	}
 }

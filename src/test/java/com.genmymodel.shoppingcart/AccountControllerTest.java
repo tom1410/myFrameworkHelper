@@ -39,8 +39,12 @@ public class AccountControllerTest {
      */
 	@Test
 	public void getHello() throws Exception {
+	
+	    // Start of user code Account
 		mvc.perform(MockMvcRequestBuilders.get("/account").accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().string(is("Greetings from AccountController!")));
+		
+		// End of user code
 	}
 }
